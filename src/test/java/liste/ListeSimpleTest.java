@@ -273,6 +273,5 @@ public class ListeSimpleTest {
     public void testTeteNull(){
         listeATester.modifiePremier(2, 4);
         assertEquals(listeATester.toString(), "ListeSimple()");
-        assertEquals(4, listeATester.tete.getSuivant().getElement());
     }
 }
