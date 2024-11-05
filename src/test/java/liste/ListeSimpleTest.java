@@ -278,7 +278,7 @@ public class ListeSimpleTest {
     public void echangerTeteR2Noeud() {
         listeATester.ajout(5);
         listeATester.ajout(4);
-	Noeud r1 = listeATester.tete;        
+        Noeud r1 = listeATester.tete;
         listeATester.ajout(3);
         listeATester.ajout(2);
         listeATester.ajout(1);
