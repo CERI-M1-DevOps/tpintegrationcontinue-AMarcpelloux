@@ -269,4 +269,10 @@ public class ListeSimpleTest {
         System.out.println(listeATester);
         assertEquals(listeATester.toString(), "ListeSimple(Noeud(1), Noeud(2), Noeud(3), Noeud(4), Noeud(5))");
     }
+    @Test
+    public void testTeteNull(){
+        listeATester.modifiePremier(2, 4);
+        assertEquals(listeATester.toString(), "ListeSimple()");
+        assertEquals(4, listeATester.tete.getSuivant().getElement());
+    }
 }
