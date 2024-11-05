@@ -8,9 +8,12 @@ jobs:
    name: Main_job
    runs-on: ubuntu-latest
    steps:
-    - name: checkout
-      run: actions/checkout@v4
-    - name: setup_java
-      run: actions/setup-java@v4
+    - uses: actions/checkout@v4
+      with:
+        ref: main
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'coretto'
+        java-version: '21'
     - name: build
       run: mvn -B package
