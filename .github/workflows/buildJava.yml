@@ -13,4 +13,4 @@ jobs:
         distribution: 'corretto'
         java-version: '21'
     - name: build
-      run: mvn -B package
+      run: mvn -B /home/runner/work/tpintegrationcontinue-AMarcpelloux/tpintegrationcontinue-AMarcpelloux/pom.xml package
