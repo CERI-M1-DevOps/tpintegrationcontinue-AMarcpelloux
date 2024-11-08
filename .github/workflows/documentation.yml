@@ -4,16 +4,17 @@ on:
       - closed
 
 jobs:
-runs-on: ubuntu-latest
-  steps:
-  - name: Deploy
-    uses: peaceiris/actions-gh-pages@v4
-    with:
-      github_token: ${{ secrets.GITHUB_TOKEN }}
-      publish_dir: ./public
-  - uses: actions/setup-java@v4
-    with:
-      distribution: 'corretto'
-      java-version: '21'
-  env:
-    run: mvn -B javadoc::javadoc
+  boc_job:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Deploy
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+    - uses: actions/setup-java@v4
+      with:
+        distribution: 'corretto'
+        java-version: '21'
+    env:
+      run: mvn -B javadoc::javadoc
