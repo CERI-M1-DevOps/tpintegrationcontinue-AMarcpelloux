@@ -6,6 +6,8 @@ on:
 jobs:
   boc_job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
     - name: doc
       run: mvn -B javadoc::javadoc
