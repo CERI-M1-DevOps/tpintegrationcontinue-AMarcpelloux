@@ -6,15 +6,14 @@ on:
 jobs:
   boc_job:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
-    - name: Deploy
+    - name: doc
+      run: mvn -B javadoc::javadoc
+    - name: page
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
         publish_dir: ./public
-    - uses: actions/setup-java@v4
-      with:
-        distribution: 'corretto'
-        java-version: '21'
-    env:
-      run: mvn -B javadoc::javadoc
+
