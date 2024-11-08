@@ -1,0 +1,18 @@
+on:
+  pull_request:
+    types:
+      - closed
+
+jobs:
+  if_merged:
+    if: github.event.pull_request.merged == true
+    runs-on: ubuntu-latest
+     steps:
+      - uses: peaceiris/actions-gh-pages@v4
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'corretto'
+          java-version: '21'
+      run: mvn -B javadoc::javadoc
