@@ -15,6 +15,11 @@ jobs:
       with:
         distribution: 'corretto'
         java-version: '21'
+    - uses: actions/cache@v4
+      with:
+        path: |
+          ~/.maven/caches
+          ~/.maven/wrapper
     - name: build
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
