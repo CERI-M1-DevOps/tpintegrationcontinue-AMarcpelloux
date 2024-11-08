@@ -15,12 +15,18 @@ jobs:
       with:
         distribution: 'corretto'
         java-version: '21'
-    - name: cache
+    - name: Cache SonarQube packages
       uses: actions/cache@v4
       with:
-        path: |
-          ~/.maven/caches
-          ~/.maven/wrapper
+        path: ~/.sonar/cache
+        key: ${{ runner.os }}-sonar
+        restore-keys: ${{ runner.os }}-sonar
+    - name: Cache Maven packages
+      uses: actions/cache@v1
+      with:
+        path: ~/.m2
+        key: ${{ runner.os }}-m2-${{ hashFiles('**/pom.xml') }}
+        restore-keys: ${{ runner.os }}-m2
     - name: build
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
