@@ -1,6 +1,12 @@
 package liste;
 
 public class ListeSimple {
+	/**
+	* Description de la méthode
+	* @param var1 description du premier paramètre
+	* @param var2 description du second paramètre
+	* @return Description de la valeur retournée
+	*/
     private long size;
     Noeud tete;
 
