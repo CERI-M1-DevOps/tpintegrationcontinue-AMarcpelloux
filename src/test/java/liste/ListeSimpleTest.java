@@ -76,6 +76,8 @@ class ListeSimpleTest {
 
     @Test
     void supprimePremierListeVide() {
+		listeATester.ajout(1);
+        listeATester.supprimePremier(1);
         listeATester.supprimePremier(1);
         
         assertNull(listeATester.tete);
@@ -279,6 +281,8 @@ class ListeSimpleTest {
     }
     @Test
     void echangerTeteR2Noeud() {
+		listeATester.ajout(1);
+		listeATester.supprimePremier(1);
         listeATester.ajout(5);
         listeATester.ajout(4);
         Noeud r1 = listeATester.tete;
