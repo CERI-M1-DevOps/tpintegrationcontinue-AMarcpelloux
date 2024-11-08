@@ -15,5 +15,5 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.SA_MERE }}
-        publish_dir: ./public
+        publish_dir: ./target/reports/apidocs
 
